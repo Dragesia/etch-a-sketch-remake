@@ -1,0 +1,43 @@
+/* general adjustments */
+:root {
+    --pr-color: #1e90ff;
+    --sc-color: #ffffff;
+  }
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* general adjustments end */
+
+/* toolbar */
+
+
+
+/* toobar end */
+
+/* drawing area */
+
+
+
+/* drawing area end */
+
+/* footer area */
+
+
+
+/* footer end */
+
+/* etc */
+
+
+
+/* etc end*/
+
