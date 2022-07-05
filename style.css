@@ -1,8 +1,10 @@
 /* general adjustments */
 :root {
-    --pr-color: #1e90ff;
-    --sc-color: #ffffff;
-  }
+    --pr-color: #541690;
+    --active-color: #ff4949;
+    --sc-color: #ff8d29;
+    --th-color: #ffcd38;
+}
 
 * {
     padding: 0;
@@ -10,6 +12,7 @@
 }
 
 body {
+    background-color: var(--pr-color);
     display: flex;
     justify-content: center;
     align-items: center;
