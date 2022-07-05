@@ -12,6 +12,7 @@
 }
 
 body {
+    height: 100vh;
     background-color: var(--pr-color);
     display: flex;
     justify-content: center;
@@ -20,20 +21,78 @@ body {
 
 /* general adjustments end */
 
+/* container */
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 700px;
+}
+/* container end */
+
 /* toolbar */
 
+.toolbar {
+    background-color: var(--th-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    width: 300px;
+}
 
+input[type="color"] {
+	-webkit-appearance: none;
+	width: 80px;
+	height: 80px;
+    border-radius: 100px;
+    margin-top: 4px;
+    margin-bottom: 60px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+    border-radius: 100px;
+}
 
-/* toobar end */
+button {
+    background-color: var(--sc-color);
+    width: 200px;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    font-size: 16px;
+}
+
+.btn-on {
+    background-color: var(--active-color);
+    color: white;
+}
+
+/* toolbar end */
 
 /* drawing area */
 
-
+.drawing-area {
+    background-color: white;
+    height: 700px;
+    width: 700px
+}
 
 /* drawing area end */
 
 /* footer area */
 
+footer {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
 
 
 /* footer end */
