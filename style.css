@@ -161,6 +161,16 @@ footer {
     bottom: 0px;
     right: 0px;
     left: 0px;
+    text-align: right;
+    font-size: 25px;
+    color: white;
+    padding: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin-bottom: 5px;
 }
 
 /* footer end */
