@@ -67,7 +67,7 @@ function activateMode(newMode) {
     }
 }
 
-function changeColor(newColor) {
+function setCurrentColor(newColor) {
     currentColor = newColor;
 }
 
@@ -91,7 +91,7 @@ clearAll.onmousedown = () => clearAll.classList.add("btn-on");
 clearAll.onmouseup = () => clearAll.classList.remove("btn-on");
 
 colorPicker.onmouseout = () => {
-    changeColor(colorPicker.value);
+    setCurrentColor(colorPicker.value);
 }
 
 size.onmousemove = () => {
