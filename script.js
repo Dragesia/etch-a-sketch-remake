@@ -3,7 +3,7 @@ window.onload = () => {
     activateMode(DEFAULT_MODE);
 }
 
-const DEFAULT_COLOR = "#FFFFFF";
+const DEFAULT_COLOR = "black";
 const DEFAULT_MODE = "color-mode";
 const DEFAULT_SIZE = 16;
 
@@ -34,6 +34,7 @@ function clearGrid() {
 function createGrid(sizeVal) {
     for(let i=0; i<sizeVal*sizeVal; i++) {
         let block = document.createElement("div");
+        block.addEventListener("mouseover", changeColor);
         drawingArea.appendChild(block);
     }
     drawingArea.style.gridTemplateRows = `repeat(${sizeVal}, 1fr)`;
@@ -71,6 +72,19 @@ function setCurrentColor(newColor) {
     currentColor = newColor;
 }
 
+function changeColor(e) {
+    if (currentMode == "color-mode") {
+        e.target.style.backgroundColor = currentColor;
+    } else if (currentMode == "rainbow") {
+        let randomR = Math.floor(Math.random() * 256);
+        let randomG = Math.floor(Math.random() * 256);
+        let randomB = Math.floor(Math.random() * 256);
+        e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+    } else if (currentMode == "eraser") {
+        e.target.style.backgroundColor = "white";
+    }
+}
+
 colorMode.onmouseover = () => colorMode.classList.add("btn-hover");
 colorMode.onmouseout = () => colorMode.classList.remove("btn-hover");
 rainbow.onmouseover = () => rainbow.classList.add("btn-hover");
@@ -102,3 +116,7 @@ size.onchange = () => {
     createGrid(size.value);
 }
 
+clearAll.onclick = () => {
+    clearGrid();
+    createGrid(size.value);
+}
