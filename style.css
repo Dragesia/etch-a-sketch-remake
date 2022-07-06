@@ -24,11 +24,21 @@ body {
     height: 100vh;
     background-color: var(--pr-color);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 /* general adjustments end */
+
+/* header */
+
+h1 {
+    font-size: 100px;
+    color: var(--sc-color);
+}
+
+/* header end */
 
 /* container */
 
