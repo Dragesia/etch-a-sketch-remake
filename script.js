@@ -10,7 +10,6 @@ const DEFAULT_SIZE = 16;
 const colorPicker = document.querySelector(".color-picker");
 const colorMode = document.querySelector(".color-mode");
 const rainbow = document.querySelector(".rainbow");
-const realistic = document.querySelector(".realistic");
 const eraser = document.querySelector(".eraser");
 const clearAll = document.querySelector(".clear-all");
 const size = document.querySelector(".size");
@@ -54,8 +53,6 @@ function activateMode(newMode) {
         colorMode.classList.remove("btn-on");
     } else if (currentMode == "rainbow") {
         rainbow.classList.remove("btn-on");
-    } else if (currentMode == "realistic") {
-        realistic.classList.remove("btn-on");
     } else if (currentMode == "eraser") {
         eraser.classList.remove("btn-on");
     }
@@ -64,8 +61,6 @@ function activateMode(newMode) {
         colorMode.classList.add("btn-on");
     } else if (newMode == "rainbow") {
         rainbow.classList.add("btn-on");
-    } else if (newMode == "realistic") {
-        realistic.classList.add("btn-on");
     } else if (newMode == "eraser") {
         eraser.classList.add("btn-on");
     }
@@ -93,8 +88,6 @@ colorMode.onmouseover = () => colorMode.classList.add("btn-hover");
 colorMode.onmouseout = () => colorMode.classList.remove("btn-hover");
 rainbow.onmouseover = () => rainbow.classList.add("btn-hover");
 rainbow.onmouseout = () => rainbow.classList.remove("btn-hover");
-realistic.onmouseover = () => realistic.classList.add("btn-hover");
-realistic.onmouseout = () => realistic.classList.remove("btn-hover");
 eraser.onmouseover = () => eraser.classList.add("btn-hover");
 eraser.onmouseout = () => eraser.classList.remove("btn-hover");
 clearAll.onmouseover = () => clearAll.classList.add("btn-hover");
@@ -102,7 +95,6 @@ clearAll.onmouseout = () => clearAll.classList.remove("btn-hover");
 
 colorMode.onclick = () => changeMode("color-mode");
 rainbow.onclick = () => changeMode("rainbow");
-realistic.onclick = () => changeMode("realistic");
 eraser.onclick = () => changeMode("eraser");
 
 clearAll.onmousedown = () => clearAll.classList.add("btn-on");
