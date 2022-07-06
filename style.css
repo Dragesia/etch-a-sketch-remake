@@ -1,4 +1,6 @@
 /* general adjustments */
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
 :root {
     --pr-color: #541690;
     --active-color: #ff4949;
@@ -9,6 +11,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'VT323';
 }
 
 body {
@@ -65,7 +68,7 @@ button {
     margin-top: 10px;
     margin-bottom: 10px;
     border: 0;
-    font-size: 16px;
+    font-size: 25px;
     transition: transform 0.1s;
 }
 
@@ -108,7 +111,7 @@ button {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    font-size: 20px;
+    font-size: 25px;
     gap: 10px;
 }
 
