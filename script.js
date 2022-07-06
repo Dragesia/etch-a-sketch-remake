@@ -7,21 +7,21 @@ const DEFAULT_COLOR = "#FFFFFF";
 const DEFAULT_MODE = "color-mode";
 const DEFAULT_SIZE = 16;
 
-const gridSize = DEFAULT_SIZE;
-const currentColor = DEFAULT_COLOR;
-
+const colorPicker = document.querySelector(".color-picker");
+const colorMode = document.querySelector(".color-mode");
+const rainbow = document.querySelector(".rainbow");
+const realistic = document.querySelector(".realistic");
+const eraser = document.querySelector(".eraser");
+const clearAll = document.querySelector(".clear-all");
 const size = document.querySelector(".size");
 const sizeText = document.querySelector(".size-text");
 const drawingArea = document.querySelector(".drawing-area");
 
-size.onmousemove = () => {
-    changeSizeText(size.value);
-}
+let gridSize = DEFAULT_SIZE;
+let currentColor = DEFAULT_COLOR;
+let currentMode = DEFAULT_MODE;
 
-size.onchange = () => {
-    clearGrid();
-    createGrid(size.value);
-}
+
 
 function changeSizeText(sizeVal) {
     sizeText.innerHTML = `${sizeVal}x${sizeVal}`;
@@ -40,19 +40,10 @@ function createGrid(sizeVal) {
     drawingArea.style.gridTemplateColumns = `repeat(${sizeVal}, 1fr)`;
 }
 
-let currentMode = DEFAULT_MODE;
-
 function changeMode(newMode) {
     activateMode(newMode);
     currentMode = newMode;
 }
-
-const colorPicker = document.querySelector(".color-picker");
-const colorMode = document.querySelector(".color-mode");
-const rainbow = document.querySelector(".rainbow");
-const realistic = document.querySelector(".realistic");
-const eraser = document.querySelector(".eraser");
-const clearAll = document.querySelector(".clear-all");
 
 function activateMode(newMode) {
     if (currentMode == "color-mode") {
@@ -76,6 +67,10 @@ function activateMode(newMode) {
     }
 }
 
+function changeColor(newColor) {
+    currentColor = newColor;
+}
+
 colorMode.onmouseover = () => colorMode.classList.add("btn-hover");
 colorMode.onmouseout = () => colorMode.classList.remove("btn-hover");
 rainbow.onmouseover = () => rainbow.classList.add("btn-hover");
@@ -94,3 +89,16 @@ eraser.onclick = () => changeMode("eraser");
 
 clearAll.onmousedown = () => clearAll.classList.add("btn-on");
 clearAll.onmouseup = () => clearAll.classList.remove("btn-on");
+
+colorPicker.onmouseout = () => {
+    changeColor(colorPicker.value);
+}
+
+size.onmousemove = () => {
+    changeSizeText(size.value);
+}
+size.onchange = () => {
+    clearGrid();
+    createGrid(size.value);
+}
+
