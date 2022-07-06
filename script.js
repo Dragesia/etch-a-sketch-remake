@@ -21,7 +21,9 @@ let gridSize = DEFAULT_SIZE;
 let currentColor = DEFAULT_COLOR;
 let currentMode = DEFAULT_MODE;
 
-
+let mouseDown = false;
+drawingArea.onmousedown = () => mouseDown = true;
+drawingArea.onmouseup = () => mouseDown = false;
 
 function changeSizeText(sizeVal) {
     sizeText.innerHTML = `${sizeVal}x${sizeVal}`;
@@ -34,6 +36,7 @@ function clearGrid() {
 function createGrid(sizeVal) {
     for(let i=0; i<sizeVal*sizeVal; i++) {
         let block = document.createElement("div");
+        block.addEventListener("mousedown", changeColor);
         block.addEventListener("mouseover", changeColor);
         drawingArea.appendChild(block);
     }
@@ -73,6 +76,7 @@ function setCurrentColor(newColor) {
 }
 
 function changeColor(e) {
+    if (e.type == "mouseover" && !mouseDown) return;
     if (currentMode == "color-mode") {
         e.target.style.backgroundColor = currentColor;
     } else if (currentMode == "rainbow") {
