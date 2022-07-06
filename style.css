@@ -69,6 +69,39 @@ button {
     transition: transform 0.1s;
 }
 
+.size {
+    -webkit-appearance: none;
+    height: 9px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.9;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+  
+.size:hover {
+    opacity: 1;
+}
+  
+.size::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--sc-color);
+    cursor: pointer;
+}
+  
+.size::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--sc-color);
+    cursor: pointer;
+}
+
 .size-div {
     display: flex;
     flex-direction: column;
