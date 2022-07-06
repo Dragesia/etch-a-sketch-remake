@@ -48,7 +48,7 @@ input[type="color"] {
 	height: 80px;
     border-radius: 100px;
     margin-top: 4px;
-    margin-bottom: 60px;
+    margin-bottom: 45px;
 }
 input[type="color"]::-webkit-color-swatch-wrapper {
 	padding: 0;
@@ -66,11 +66,27 @@ button {
     margin-bottom: 10px;
     border: 0;
     font-size: 16px;
+    transition: transform 0.1s;
 }
+
+.size-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 20px;
+    gap: 10px;
+}
+
 
 .btn-on {
     background-color: var(--active-color);
     color: white;
+}
+
+.btn-hover {
+    transform: scale(105%);
 }
 
 /* toolbar end */
@@ -78,6 +94,7 @@ button {
 /* drawing area */
 
 .drawing-area {
+    display: grid;
     background-color: white;
     height: 700px;
     width: 700px
@@ -93,7 +110,6 @@ footer {
     right: 0px;
     left: 0px;
 }
-
 
 /* footer end */
 
